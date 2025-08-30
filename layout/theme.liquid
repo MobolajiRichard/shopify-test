@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>
+      {{ page_title | capitalize }}
+      | KICKS
+    </title>
+
+    <meta
+      name="description"
+      content="KICKS FOR EVERYONE"
+    >
+
+    {{ content_for_header }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body style="padding:0; margin:0">
+    <header id="header">
+      {% section 'announcement' %}
+      {% section 'header' %}
+    </header>
+    <main id="main" role="main">
+      {{ content_for_layout }}
+    </main>
+    {% unless template.name == '404' %}
+      {% section 'footer' %}
+    {% endunless %}
+  </body>
+</html>
