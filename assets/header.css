@@ -1,0 +1,24 @@
+header {
+  background-color: #fafafa;
+  padding: 32px;
+  border-radius: 24px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color:#232321;
+}
+header > div {
+  gap: 40px;
+}
+
+.logo {
+  width: 128px;
+  height: 32px;
+}
+
+.cart-count {
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  background-color: #ffa52f;
+}

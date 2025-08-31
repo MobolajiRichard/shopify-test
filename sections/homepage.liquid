@@ -1,0 +1,289 @@
+{{ 'homepage.css' | asset_url | stylesheet_tag }}
+
+<main class="homepage">
+  <p class="title">DENSE . <span class="blue">PXI</span></p>
+
+  {% comment %} BANNER {% endcomment %}
+  <div class="banner">
+    <img src="{{ "home-bg.jpg" | asset_url }}" alt="banner" loading="lazy">
+    <div class="banner-content flex justify-between items-end">
+      <div class="flex flex-col banner-info">
+        <p class="banner-title">NIKE AIR MAX</p>
+        <p class="banner-desc">
+          Nike introducing the new air max for <br>
+          everyone's comfort
+        </p>
+        <button>SHOP NOW</button>
+      </div>
+
+      <div class="flex flex-col banner-preview-container">
+        <img src="{{ "home-bg.jpg" | asset_url }}" alt="banner" class="banner-preview" loading="lazy">
+        <img src="{{ "home-bg.jpg" | asset_url }}" alt="banner" class="banner-preview" loading="lazy">
+      </div>
+    </div>
+    <div class="banner-gradient" />
+    <div class="banner-label">
+      <p>Nike product of the year</p>
+    </div>
+
+    <div class="banner-dots flex  items-center ">
+      <div class="banner-dot"></div>
+      <div class="banner-dot"></div>
+      <div class="banner-dot"></div>
+    </div>
+  </div>
+
+  {% comment %} NEW KICKS {% endcomment %}
+  <div class="latest">
+    <div class="flex items-end justify-between latest-header">
+      <p>
+        Don’t miss out <br>
+        new drops
+      </p>
+      <button>SHOP NEW DROPS</button>
+    </div>
+    <div class="flex latest-kicks">
+      <div class="latest-kick-container">
+        <div class="latest-kick-image-frame">
+          <img class="new" alt="new" src="{{ "new.png" | asset_url }}">
+          <div class="new-tag flex items-center justify-center">
+            <p>New</p>
+          </div>
+        </div>
+        <p class="latest-kick-title">ADIDAS 4DFWD X PARLEY RUNNING SHOES</p>
+        <button>
+          VIEW PRODUCT - <span class="orange latest-kick-button-span"> {{ '  ' }} $125</span>
+        </button>
+      </div>
+
+      <div class="latest-kick-container">
+        <div class="latest-kick-image-frame">
+          <img class="new" alt="new" src="{{ "new.png" | asset_url }}">
+          <div class="new-tag flex items-center justify-center">
+            <p>New</p>
+          </div>
+        </div>
+        <p class="latest-kick-title">ADIDAS 4DFWD X PARLEY RUNNING SHOES</p>
+        <button>
+          VIEW PRODUCT - <span class="orange latest-kick-button-span"> {{ '  ' }} $125</span>
+        </button>
+      </div>
+
+      <div class="latest-kick-container">
+        <div class="latest-kick-image-frame">
+          <img class="new" alt="new" src="{{ "new.png" | asset_url }}">
+          <div class="new-tag flex items-center justify-center">
+            <p>New</p>
+          </div>
+        </div>
+        <p class="latest-kick-title">ADIDAS 4DFWD X PARLEY RUNNING SHOES</p>
+        <button>
+          VIEW PRODUCT - <span class="orange latest-kick-button-span"> {{ '  ' }} $125</span>
+        </button>
+      </div>
+
+      <div class="latest-kick-container">
+        <div class="latest-kick-image-frame">
+          <img class="new" alt="new" src="{{ "new.png" | asset_url }}">
+          <div class="new-tag flex items-center justify-center">
+            <p>New</p>
+          </div>
+        </div>
+        <p class="latest-kick-title">ADIDAS 4DFWD X PARLEY RUNNING SHOES</p>
+        <button>
+          VIEW PRODUCT - <span class="orange latest-kick-button-span"> {{ '  ' }} $125</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {% comment %} CATEGORIES {% endcomment %}
+  <div class="categories">
+    <div class="categories-header flex items-center">
+      <p>SOLD ONLY IN PREMIUM QUALITY</p>
+      <p>|</p>
+      <p>SUBSCRIBE TO OUR CARE PROGRAM</p>
+      <p>|</p>
+      <p>FREE RETURNS EVEN AFTER 2 WEEKS</p>
+    </div>
+    <div class="flex items-center justify-between categories-label-container">
+      <p class="categories-label">CATEGORIES</p>
+      <div class="flex item-center categories-nav">
+        <div class="categories-nav-button">
+          {% render 'icon-chevron-left' %}
+        </div>
+        <div class="categories-nav-button">
+          {% render 'icon-chevron-right' %}
+        </div>
+      </div>
+    </div>
+    <div class="flex categories-slides">
+      <div class="categories-slide">
+        <div class="categories-slide-header">
+          <div class="flex items-center justify-between categories-slide-size-header">
+            <p>SIZE</p>
+            <p class="chart">SIZE CHART</p>
+          </div>
+          <div class="flex items-center categories-slide-sizes">
+            <div class="categories-slide-size ">
+              <p>38</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>39</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>40</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>41</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>42</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>43</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>44</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>45</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>46</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>47</p>
+            </div>
+          </div>
+        </div>
+        <img alt="categories-img" class="categories-slide-img" loading="lazy" src="{{  "lifestyle.png" | asset_url}}">
+        <div class="categories-slide-footer flex items-center justify-between">
+          <p>Lifestyle Shoes</p>
+          <div class="categories-slide-link">
+            {% render 'icon-arrow' %}
+          </div>
+        </div>
+      </div>
+      <div class="categories-slide">
+        <div class="categories-slide-header">
+          <div class="flex items-center justify-between categories-slide-size-header">
+            <p>SIZE</p>
+            <p class="chart">SIZE CHART</p>
+          </div>
+          <div class="flex items-center categories-slide-sizes">
+            <div class="categories-slide-size ">
+              <p>38</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>39</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>40</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>41</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>42</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>43</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>44</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>45</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>46</p>
+            </div>
+            <div class="categories-slide-size ">
+              <p>47</p>
+            </div>
+          </div>
+        </div>
+        <img alt="categories-img" class="categories-slide-img" loading="lazy" src="{{  "basketball.png" | asset_url}}">
+        <div class="categories-slide-footer flex items-center justify-between">
+          <p>BASKETBALL Shoes</p>
+          <div class="categories-slide-link">
+            {% render 'icon-arrow' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% comment %} REVIEWS {% endcomment %}
+  <div class="latest">
+    <div class="flex items-end justify-between latest-header">
+      <p>REVIEWS</p>
+      <button>SEE ALL</button>
+    </div>
+    <div class="flex reviews">
+      <div class="review">
+        <div class="review-header flex items-center">
+          <div class="flex-1">
+            <p class="review-title">Good Quality</p>
+            <p class="review-desc">I highly recommend shopping from kicks</p>
+            <div style="gap:4px" class="flex items-center">
+              <div class="flex items-center">
+                {% render 'icon-star' %}
+                {% render 'icon-star' %}
+                {% render 'icon-star' %}
+                {% render 'icon-star' %}
+                {% render 'icon-star' %}
+              </div>
+              <p class="review-rating">5.0</p>
+            </div>
+          </div>
+          <img class="review-avatar" alt="reviewer-1" src="{{ "reviewer1.jpg" | asset_url }}" loading="lazy">
+        </div>
+        <img class="review-image" src="{{ "review1.png" | asset_url }}" loading="lazy">
+      </div>
+
+      <div class="review">
+        <div class="review-header flex items-center">
+          <div class="flex-1">
+            <p class="review-title">Good Quality</p>
+            <p class="review-desc">I highly recommend shopping from kicks</p>
+            <div style="gap:4px" class="flex items-center">
+              <div class="flex items-center">
+                {% render 'icon-star' %}
+                {% render 'icon-star' %}
+                {% render 'icon-star' %}
+                {% render 'icon-star' %}
+                {% render 'icon-star' %}
+              </div>
+              <p class="review-rating">5.0</p>
+            </div>
+          </div>
+          <img class="review-avatar" alt="reviewer-1" src="{{ "reviewer2.png" | asset_url }}" loading="lazy">
+        </div>
+        <img class="review-image" src="{{ "review2.png" | asset_url }}" loading="lazy">
+      </div>
+
+      <div class="review">
+        <div class="review-header flex items-center">
+          <div class="flex-1">
+            <p class="review-title">Good Quality</p>
+            <p class="review-desc">I highly recommend shopping from kicks</p>
+            <div style="gap:4px" class="flex items-center">
+              <div class="flex items-center">
+                {% render 'icon-star' %}
+                {% render 'icon-star' %}
+                {% render 'icon-star' %}
+                {% render 'icon-star' %}
+                {% render 'icon-star' %}
+              </div>
+              <p class="review-rating">5.0</p>
+            </div>
+          </div>
+          <img class="review-avatar" alt="reviewer-1" src="{{ "reviewer3.png" | asset_url }}" loading="lazy">
+        </div>
+        <img class="review-image" src="{{ "review3.png" | asset_url }}" loading="lazy">
+      </div>
+    </div>
+  </div>
+</main>
