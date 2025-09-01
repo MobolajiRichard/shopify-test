@@ -4,32 +4,78 @@
   <p class="title">DENSE . <span class="blue">PXI</span></p>
 
   {% comment %} BANNER {% endcomment %}
-  <div class="banner">
-    <img src="{{ "home-bg.jpg" | asset_url }}" alt="banner" loading="lazy">
-    <div class="banner-content flex justify-between items-end">
-      <div class="flex flex-col banner-info">
-        <p class="banner-title">NIKE AIR MAX</p>
-        <p class="banner-desc">
-          Nike introducing the new air max for <br>
-          everyone's comfort
-        </p>
-        <button>SHOP NOW</button>
+  <div id="glide" class="glide">
+    <div style="width:100%; position:relative" class="glide__track" data-glide-el="track">
+      <div class="glide__slides banner-container">
+        <div class="glide__slide banner">
+          <img src="{{ "home-bg.jpg" | asset_url }}" alt="banner" loading="lazy">
+          <div class="banner-content flex justify-between items-end">
+            <div class="flex flex-col banner-info">
+              <p class="banner-title">NIKE AIR MAX</p>
+              <p class="banner-desc">
+                Nike introducing the new air max for <br>
+                everyone's comfort
+              </p>
+              <button>SHOP NOW</button>
+            </div>
+            <div class="flex flex-col banner-preview-container">
+              <img src="{{ "nike1.jpg" | asset_url }}" alt="banner" class="banner-preview" loading="lazy">
+              <img src="{{ "nike2.jpg" | asset_url }}" alt="banner" class="banner-preview" loading="lazy">
+            </div>
+          </div>
+          <div class="banner-gradient"></div>
+          <div class="banner-label">
+            <p>Nike product of the year</p>
+          </div>
+        </div>
+        <div class="glide__slide banner">
+          <img src="{{ "adidas3.webp" | asset_url }}" alt="banner" loading="lazy">
+          <div class="banner-content flex justify-between items-end">
+            <div class="flex flex-col banner-info">
+              <p class="banner-title">ADIDAS SAMBA OG</p>
+              <p class="banner-desc">
+                Adidas introducing the samba og for <br>
+                everyone's comfort
+              </p>
+              <button>SHOP NOW</button>
+            </div>
+            <div class="flex flex-col banner-preview-container">
+              <img src="{{ "adidas1.jpg" | asset_url }}" alt="banner" class="banner-preview" loading="lazy">
+              <img src="{{ "adidas2.jpg" | asset_url }}" alt="banner" class="banner-preview" loading="lazy">
+            </div>
+          </div>
+          <div class="banner-gradient"></div>
+          <div class="banner-label">
+            <p>Adidas product of the year</p>
+          </div>
+        </div>
+        <div class="glide__slide banner">
+          <img src="{{ "speedcat1.webp" | asset_url }}" alt="banner" loading="lazy">
+          <div class="banner-content flex justify-between items-end">
+            <div class="flex flex-col banner-info">
+              <p class="banner-title">PUMA SPEEDCAT OG</p>
+              <p class="banner-desc">
+                Puma introducing the speedcat og for <br>
+                everyone's comfort
+              </p>
+              <button>SHOP NOW</button>
+            </div>
+            <div class="flex flex-col banner-preview-container">
+              <img src="{{ "speedcat2.webp" | asset_url }}" alt="banner" class="banner-preview" loading="lazy">
+              <img src="{{ "speedcat3.jpeg" | asset_url }}" alt="banner" class="banner-preview" loading="lazy">
+            </div>
+          </div>
+          <div class="banner-gradient"></div>
+          <div class="banner-label">
+            <p>Puma product of the year</p>
+          </div>
+        </div>
       </div>
-
-      <div class="flex flex-col banner-preview-container">
-        <img src="{{ "home-bg.jpg" | asset_url }}" alt="banner" class="banner-preview" loading="lazy">
-        <img src="{{ "home-bg.jpg" | asset_url }}" alt="banner" class="banner-preview" loading="lazy">
+      <div class="banner-dots flex  items-center ">
+        <div class="banner-dot"></div>
+        <div class="banner-dot"></div>
+        <div class="banner-dot"></div>
       </div>
-    </div>
-    <div class="banner-gradient" />
-    <div class="banner-label">
-      <p>Nike product of the year</p>
-    </div>
-
-    <div class="banner-dots flex  items-center ">
-      <div class="banner-dot"></div>
-      <div class="banner-dot"></div>
-      <div class="banner-dot"></div>
     </div>
   </div>
 
@@ -43,57 +89,24 @@
       <button>SHOP NEW DROPS</button>
     </div>
     <div class="flex latest-kicks">
-      <div class="latest-kick-container">
-        <div class="latest-kick-image-frame">
-          <img class="new" alt="new" src="{{ "new.png" | asset_url }}">
-          <div class="new-tag flex items-center justify-center">
-            <p>New</p>
+      {% for product in collections.all.products %}
+        <div class="latest-kick-container">
+          <div class="latest-kick-image-frame">
+            <img class="new" alt="{{ product.title }}" src="{{ product.featured_media | image_url }}">
+            <div class="new-tag flex items-center justify-center">
+              <p>New</p>
+            </div>
           </div>
+          <p class="latest-kick-title">{{ product.title }}</p>
+          <button>
+            VIEW PRODUCT -
+            <span class="orange latest-kick-button-span">
+              {{ '  ' }}
+              {{ product.price | money_without_trailing_zeros -}}
+            </span>
+          </button>
         </div>
-        <p class="latest-kick-title">ADIDAS 4DFWD X PARLEY RUNNING SHOES</p>
-        <button>
-          VIEW PRODUCT - <span class="orange latest-kick-button-span"> {{ '  ' }} $125</span>
-        </button>
-      </div>
-
-      <div class="latest-kick-container">
-        <div class="latest-kick-image-frame">
-          <img class="new" alt="new" src="{{ "new.png" | asset_url }}">
-          <div class="new-tag flex items-center justify-center">
-            <p>New</p>
-          </div>
-        </div>
-        <p class="latest-kick-title">ADIDAS 4DFWD X PARLEY RUNNING SHOES</p>
-        <button>
-          VIEW PRODUCT - <span class="orange latest-kick-button-span"> {{ '  ' }} $125</span>
-        </button>
-      </div>
-
-      <div class="latest-kick-container">
-        <div class="latest-kick-image-frame">
-          <img class="new" alt="new" src="{{ "new.png" | asset_url }}">
-          <div class="new-tag flex items-center justify-center">
-            <p>New</p>
-          </div>
-        </div>
-        <p class="latest-kick-title">ADIDAS 4DFWD X PARLEY RUNNING SHOES</p>
-        <button>
-          VIEW PRODUCT - <span class="orange latest-kick-button-span"> {{ '  ' }} $125</span>
-        </button>
-      </div>
-
-      <div class="latest-kick-container">
-        <div class="latest-kick-image-frame">
-          <img class="new" alt="new" src="{{ "new.png" | asset_url }}">
-          <div class="new-tag flex items-center justify-center">
-            <p>New</p>
-          </div>
-        </div>
-        <p class="latest-kick-title">ADIDAS 4DFWD X PARLEY RUNNING SHOES</p>
-        <button>
-          VIEW PRODUCT - <span class="orange latest-kick-button-span"> {{ '  ' }} $125</span>
-        </button>
-      </div>
+      {% endfor %}
     </div>
   </div>
 
@@ -118,100 +131,55 @@
       </div>
     </div>
     <div class="flex categories-slides">
-      <div class="categories-slide">
-        <div class="categories-slide-header">
-          <div class="flex items-center justify-between categories-slide-size-header">
-            <p>SIZE</p>
-            <p class="chart">SIZE CHART</p>
+      {% for collection in collections %}
+        <div class="categories-slide">
+          <div class="categories-slide-header">
+            <div class="flex items-center justify-between categories-slide-size-header">
+              <p>SIZE</p>
+              <p class="chart">SIZE CHART</p>
+            </div>
+            <div class="flex items-center categories-slide-sizes">
+              <div class="categories-slide-size size-black">
+                <p>38</p>
+              </div>
+              <div class="categories-slide-size size-black">
+                <p>39</p>
+              </div>
+              <div class="categories-slide-size size-grey">
+                <p>40</p>
+              </div>
+              <div class="categories-slide-size size-grey">
+                <p>41</p>
+              </div>
+              <div class="categories-slide-size ">
+                <p>42</p>
+              </div>
+              <div class="categories-slide-size ">
+                <p>43</p>
+              </div>
+              <div class="categories-slide-size ">
+                <p>44</p>
+              </div>
+              <div class="categories-slide-size ">
+                <p>45</p>
+              </div>
+              <div class="categories-slide-size ">
+                <p>46</p>
+              </div>
+              <div class="categories-slide-size ">
+                <p>47</p>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center categories-slide-sizes">
-            <div class="categories-slide-size ">
-              <p>38</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>39</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>40</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>41</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>42</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>43</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>44</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>45</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>46</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>47</p>
-            </div>
-          </div>
-        </div>
-        <img alt="categories-img" class="categories-slide-img" loading="lazy" src="{{  "lifestyle.png" | asset_url}}">
-        <div class="categories-slide-footer flex items-center justify-between">
-          <p>Lifestyle Shoes</p>
-          <div class="categories-slide-link">
-            {% render 'icon-arrow' %}
-          </div>
-        </div>
-      </div>
-      <div class="categories-slide">
-        <div class="categories-slide-header">
-          <div class="flex items-center justify-between categories-slide-size-header">
-            <p>SIZE</p>
-            <p class="chart">SIZE CHART</p>
-          </div>
-          <div class="flex items-center categories-slide-sizes">
-            <div class="categories-slide-size ">
-              <p>38</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>39</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>40</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>41</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>42</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>43</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>44</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>45</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>46</p>
-            </div>
-            <div class="categories-slide-size ">
-              <p>47</p>
+          <img alt="categories-img" class="categories-slide-img" loading="lazy" src="{{  collection.featured_image | image_url}}">
+          <div class="categories-slide-footer flex items-center justify-between">
+            <p>{{ collection.title }}</p>
+            <div class="categories-slide-link">
+              {% render 'icon-arrow' %}
             </div>
           </div>
         </div>
-        <img alt="categories-img" class="categories-slide-img" loading="lazy" src="{{  "basketball.png" | asset_url}}">
-        <div class="categories-slide-footer flex items-center justify-between">
-          <p>BASKETBALL Shoes</p>
-          <div class="categories-slide-link">
-            {% render 'icon-arrow' %}
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 
@@ -287,3 +255,97 @@
     </div>
   </div>
 </main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const glide = new Glide('#glide', {
+      type: 'carousel',
+      autoplay: 5000,
+      perView: 1,
+      hoverpause: false,
+      loop: true,
+    }).mount();
+
+    const dots = document.querySelectorAll('.banner-dot');
+
+    function updateActiveDot(index) {
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('banner-dot-active', i === index);
+      });
+    }
+
+    glide.on('run.after', function () {
+      updateActiveDot(glide.index);
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', function () {
+        glide.go(`=${index}`);
+      });
+    });
+
+    updateActiveDot(0);
+
+    const slidesContainer = document.querySelector('.categories-slides');
+    const prevBtn = document.querySelector('.categories-nav-button:first-child');
+    const nextBtn = document.querySelector('.categories-nav-button:last-child');
+
+    const slide = document.querySelector('.categories-slide');
+    const slides = document.querySelectorAll('.categories-slide');
+    const slideWidth = slide.offsetWidth + 16;
+
+    slides.forEach((item) => {
+      const details = item.querySelector('.categories-slide-header');
+
+      item.addEventListener('mouseenter', () => {
+        details.classList.add('show');
+      });
+
+      item.addEventListener('mouseleave', () => {
+        details.classList.remove('show');
+      });
+    });
+
+    function updateButtons() {
+      const maxScrollLeft = slidesContainer.scrollWidth - slidesContainer.clientWidth;
+
+      if (slidesContainer.scrollLeft <= 0) {
+        prevBtn.classList.add('disabled');
+        prevBtn.style.pointerEvents = 'none';
+        prevBtn.style.opacity = '0.5';
+      } else {
+        prevBtn.classList.remove('disabled');
+        prevBtn.style.pointerEvents = 'auto';
+        prevBtn.style.opacity = '1';
+      }
+
+      if (slidesContainer.scrollLeft >= maxScrollLeft - 1) {
+        nextBtn.classList.add('disabled');
+        nextBtn.style.pointerEvents = 'none';
+        nextBtn.style.opacity = '0.5';
+      } else {
+        nextBtn.classList.remove('disabled');
+        nextBtn.style.pointerEvents = 'auto';
+        nextBtn.style.opacity = '1';
+      }
+    }
+
+    nextBtn.addEventListener('click', () => {
+      slidesContainer.scrollBy({
+        left: slideWidth,
+        behavior: 'smooth',
+      });
+    });
+
+    prevBtn.addEventListener('click', () => {
+      slidesContainer.scrollBy({
+        left: -slideWidth,
+        behavior: 'smooth',
+      });
+    });
+
+    slidesContainer.addEventListener('scroll', updateButtons);
+
+    updateButtons();
+  });
+</script>

@@ -75,14 +75,27 @@ footer {
 
 .footer-footer {
   background-color: #232321;
-  padding:  29px;
+  padding: 29px;
   border-radius: 40px;
-  padding-bottom: 0px;
+  /* padding-bottom: 490.66px; */
+  position: relative;
+  overflow: hidden;
 }
 
 .footer-footer-logo {
   width: 100%;
+
+}
+.footer-footer-logo-container {
   margin-top: 67px;
+  height: 267px;
+
+  /* position: absolute; */
+  /* bottom: -46px; */
+  /* left: 0; */
+  padding: 0 29px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-list-header {

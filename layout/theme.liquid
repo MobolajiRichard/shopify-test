@@ -23,17 +23,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     >
+    <link rel="stylesheet" href="{{ 'glide.min.css' | asset_url }}">
   </head>
 
   <body>
-      {% section 'header' %}
-      <main>
-      {{ content_for_layout }}
-      </main>
-      <div>
-
-        {% section 'header' %}
-      </div>
-
+    {% section 'header' %}
+    {{ content_for_layout }}
+    {% section 'footer' %}
+     <script src="{{ 'glide.min.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>

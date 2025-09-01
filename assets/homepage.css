@@ -3,6 +3,7 @@
   padding: 100px 0;
   box-sizing: border-box !important;
   display: block;
+  position: relative;
 }
 
 .title {
@@ -15,13 +16,23 @@
   text-align: center;
 }
 
-.banner {
+.banner-container {
   width: 100%;
   height: 750px;
+  position: relative;
+  display: flex;
+  box-sizing: border-box !important;
+
+
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
   border-radius: 64px;
   margin-bottom: 100px;
   position: relative;
-  box-sizing: border-box !important;
+  flex-shrink: 0;
 }
 
 .banner > img {
@@ -40,6 +51,7 @@
   height: 160px;
   border-radius: 32px;
   border: 4px solid white;
+  object-fit: cover;
 }
 
 .banner-content {
@@ -129,18 +141,19 @@
 }
 
 .banner-dot {
-  background-color: white;
+  background-color: #FEFEFE66;
   width: 10px;
   height: 10px;
   border-radius: 3px;
 }
 
+.banner-dot-active{
+background-color: white;
+}
+
 .latest {
   display: block;
   position: relative;
-}
-
-.latest-kick-container {
 }
 
 .latest-header {
@@ -193,7 +206,7 @@
   height: 100%;
   padding: 0;
   margin: 0;
-  background-color: red;
+  object-fit: cover;
 }
 
 .latest-kick-title {
@@ -242,6 +255,7 @@
 .categories {
   background-color: #232321;
   margin-top: 100px;
+  overflow-x: hidden;
 }
 
 .categories-header {
@@ -281,14 +295,37 @@
   background-color: white;
 }
 
-.categories-slides{
-    padding-left: 60px;
-    margin-top: 64px;
+.categories-slides {
+  padding-left: 60px;
+  margin-top: 64px;
+  overflow-x: auto;
 }
 
-.categories-slide-header{
-    padding: 0 16px;
-    padding-top: 26px;
+.categories-slides::-webkit-scrollbar {
+  display: none; 
+}
+
+.categories-slide:last-child {
+  margin-right: 60px;
+  border-top-right-radius: 64px;
+}
+
+.categories-slide:first-child {
+  border-top-left-radius: 64px;
+}
+
+.categories-slide:hover {
+  background-color: #eceef0;
+}
+
+.categories-slide-header {
+  padding: 0 16px;
+  padding-top: 26px;
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible !important;
 }
 
 .categories-slide-footer {
@@ -306,6 +343,7 @@
   font-family: 'Rubik', sans-serif;
   font-weight: 600;
   width: 10%;
+  text-transform: uppercase;
 }
 
 .categories-slide {
@@ -337,9 +375,9 @@
 }
 
 .categories-slide-sizes {
-    gap: 6px;
-    margin-top: 8px;
-    margin-bottom: 60px;
+  gap: 6px;
+  margin-top: 8px;
+  margin-bottom: 60px;
 }
 
 .categories-slide-size {
@@ -351,9 +389,18 @@
   font-family: 'Rubik', sans-serif;
   font-weight: 500;
   font-size: 14px;
-  background-color: #232321;
-  color: white;
+  background-color: white;
+  color: #232321;
   border-radius: 8px;
+}
+
+.size-grey{
+    background-color: #D2D1D3;
+    color: #8F8C91;
+}
+.size-black{
+background-color: #232321;
+  color: white;
 }
 
 .reviews {
