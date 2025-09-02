@@ -263,8 +263,13 @@
   color: white;
   font-family: 'Inter', sans-serif;
   justify-content: space-between;
-  font-size: 24px;
+  white-space: nowrap;
+  font-size: 1.52vw;
   gap: 4px;
+}
+.categories-header > p {
+    font-size: 1em;
+
 }
 
 .categories-label-container {
