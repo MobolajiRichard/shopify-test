@@ -1,7 +1,7 @@
 {{ 'homepage.css' | asset_url | stylesheet_tag }}
 
 <main class="homepage">
-  <p class="title">{{ section.settings.title }}</p>
+  <p class="title">DENSE . <span class="blue">PXI</span></p>
 
   {% comment %} BANNER {% endcomment %}
   <div id="glide" class="glide">
@@ -349,16 +349,3 @@
     updateButtons();
   });
 </script>
-
-{% schema %}
-{
-  "settings": [
-    {
-      "type": "textarea",
-      "id": "title",
-      "label": "Title" ,
-      "default":"DENSE . <span class="blue">PXI</span>"
-    }
-  ]
-}
-{% endschema %}
