@@ -1,7 +1,7 @@
 {{ 'footer.css' | asset_url | stylesheet_tag }}
 
 <footer>
-  <div class="footer-header flex items-center">
+  <div class="flex items-center footer-header ">
     <div class="">
       <p class="join-text">
         Join our KicksPlus <br>
@@ -21,16 +21,16 @@
     </div>
   </div>
   <div class="footer-footer">
-    <div class="flex justify-between">
+    <div class="flex justify-between footer-info">
       <div class="flex flex-col footer-about">
         <p class="footer-list-header footer-about-us">About us</p>
         <p class="footer-desc">
-          We are the biggest hyperstore in the universe. <br>
-          We got you all cover with our exclusive <br>
+          We are the biggest hyperstore in the universe. <br class="footer-about-break">
+          We got you all cover with our exclusive <br class="footer-about-break">
           collections and latest drops.
         </p>
       </div>
-      <div class="flex justify-between flex-1">
+      <div class="flex justify-between flex-1 footer-links">
         <div class="flex flex-col">
           <p class="footer-list-header">Categories</p>
           <div class="footer-links flex flex-col">

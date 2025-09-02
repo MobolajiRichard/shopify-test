@@ -5,7 +5,7 @@ header {
   font-family: 'Rubik', sans-serif;
   font-weight: 600;
   font-size: 16px;
-  color:#232321;
+  color: #232321;
 }
 header > div {
   gap: 40px;
@@ -21,4 +21,10 @@ header > div {
   width: 32px;
   border-radius: 32px;
   background-color: #ffa52f;
+}
+
+@media (max-width: 768px) {
+  .sm-no-display {
+    display: none;
+  }
 }

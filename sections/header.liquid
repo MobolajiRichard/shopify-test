@@ -1,7 +1,7 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
 
 <header class="flex items-center justify-between">
-  <div class="flex">
+  <div class="flex sm-no-display">
     <p>New Drops 🔥</p>
     <div class="flex items-center cursor-pointer">
       <p>Men</p>
@@ -13,10 +13,9 @@
     </div>
   </div>
   <div class="flex-1 flex items-center justify-center">
-
       <img src="{{ "logo-black.png" | asset_url }}" loading="lazy" alt="logo-black" class="logo">
   </div>
-  <div class="flex items-center">
+  <div class="flex items-center ">
     {% render 'icon-search' %}
     {% render 'icon-user' %}
     <div class="cart-count flex items-center justify-center  cursor-pointer">
