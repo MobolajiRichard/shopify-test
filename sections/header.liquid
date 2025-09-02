@@ -13,7 +13,12 @@
     </div>
   </div>
   <div class="flex-1 flex items-center justify-center">
-      <img src="{{ "logo-black.png" | asset_url }}" loading="lazy" alt="logo-black" class="logo">
+    <img
+      src="{%  if  section.settings.logo != blank %}  {{ section.settings.logo | image_url }} {% else %}{{ "logo-black.png" | asset_url }} {% endif %}"
+      loading="lazy"
+      alt="logo-black"
+      class="logo"
+    >
   </div>
   <div class="flex items-center ">
     {% render 'icon-search' %}
@@ -23,3 +28,15 @@
     </div>
   </div>
 </header>
+
+{% schema %}
+{
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Header Logo"
+    }
+  ]
+}
+{% endschema %}

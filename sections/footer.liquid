@@ -4,10 +4,9 @@
   <div class="flex items-center footer-header ">
     <div class="">
       <p class="join-text">
-        Join our KicksPlus <br>
-        Club & get 15% off
+        {{ section.settings.join }}
       </p>
-      <p class="sign-text">Sign up for free! Join the community.</p>
+      <p class="sign-text">{{ section.settings.signup }}</p>
       <div class="email-container flex items-center">
         <input class="email-input" placeholder="Email Address">
         <button>SUBMIT</button>
@@ -16,7 +15,12 @@
     <div class="footer-header-logo-container flex justify-center items-center flex-1">
       <div>
         {% render 'icon-plus' %}
-        <img loading="lazy" class="footer-header-logo" alt="logo-white" src="{{ "logo-white.png" | asset_url }}">
+        <img
+          loading="lazy"
+          class="footer-header-logo"
+          alt="logo-white"
+          src="{%  if  section.settings.headerLogo != blank %}  {{ section.settings.headerLogo | image_url }} {% else %}{{ "logo-white.png" | asset_url }} {% endif %}"
+        >
       </div>
     </div>
   </div>
@@ -62,7 +66,41 @@
       </div>
     </div>
     <div class="footer-footer-logo-container">
-        <img loading="lazy" class="footer-footer-logo" alt="logo-white" src="{{ "logo-white.png" | asset_url }}">
+      <img
+        loading="lazy"
+        class="footer-footer-logo"
+        alt="logo-white"
+        src="{%  if  section.settings.headerLogo != blank %}  {{ section.settings.headerLogo | image_url }} {% else %}{{ "logo-white.png" | asset_url }} {% endif %}"
+      >
     </div>
   </div>
 </footer>
+
+{% schema %}
+{
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "headerLogo",
+      "label": "Footer Header Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "footerLogo",
+      "label": "Footer Footer Logo"
+    },
+    {
+      "type": "textarea",
+      "id": "join",
+      "label": "Join Us Text" ,
+      "default":"Join our KicksPlus <br/> Club & get 15% off"
+    },
+    {
+      "type": "textarea",
+      "id": "signup",
+      "label": "Sign Up Text" ,
+      "default":"Sign up for free! Join the community."
+    }
+  ]
+}
+{% endschema %}
