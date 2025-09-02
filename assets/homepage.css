@@ -264,6 +264,7 @@
   font-family: 'Inter', sans-serif;
   justify-content: space-between;
   font-size: 24px;
+  gap: 4px;
 }
 
 .categories-label-container {
