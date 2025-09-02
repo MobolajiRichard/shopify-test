@@ -1,7 +1,7 @@
 {{ 'homepage.css' | asset_url | stylesheet_tag }}
 
 <main class="homepage">
-  <p class="title">DENSE . <span class="blue">PXI</span></p>
+  <p class="title">{{ section.settings.title }}</p>
 
   {% comment %} BANNER {% endcomment %}
   <div id="glide" class="glide">
